@@ -1,27 +1,21 @@
 #include <stdio.h>
+#include <string.h>
 
-/* //Variação
+// criar struct
 typedef struct {
-    int codigo;
+    int codigo; // valores
     char nome[30];
     int qtd;
     float valor;
 } produto; // apelido
-*/
-
-struct Pessoa {
-    int codigo; // caracteriticas
-    char nome[30];
-    int qtd;
-    float valor;
-} ;
 
 int main(){
-    struct Pessoa p1, p2; // declarar struct
+    produto p1, p2; // declarar struct
     float t1, t2;
 
     // atribuir valores
     p1.codigo = 1;
+    strcpy(p1.nome, "Tijolo");
     p1.qtd = 10000;
     p1.valor = 0.25;
 
