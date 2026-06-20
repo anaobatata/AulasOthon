@@ -4,7 +4,16 @@ struct Funcionario{
     char nome[50];
     float salario;
 };
-
+void cadastro(struct Funcionario *f){
+    printf("Insira o nome do funcinário: ");
+    scanf("%s", f->nome);
+    printf("\nInsira o salário do funcinário: ");
+    scanf ("%f",&f->salario);
+}
+void exiba(struct Funcionario f){
+    printf("\nNome: %s", f.nome);
+    printf("\nSalario: %f", f.salario);
+}
 void upvalor(float salario, float taxa){
     printf("Insira a porcentagem do aumento(Ex: 100 para um aumento de 100 p/cento): ");
     scanf ("%f",&taxa);
@@ -21,26 +30,22 @@ void upreferencia( float *salario,  float taxa){
 int main(){
     struct Funcionario f1;
     int opcao=6;
-    while(opcao !=0){
+    do {
         printf("--MENU--\n1-Cadastrar funcionário");
         printf("\n2-Exibir dados do funcionário");
         printf("\n3-Aplicar aumento por valor");
         printf("\n4-Aplicar aumento por referência");
-        printf("\n5-Sair");
+        printf("\n5-Sair\n");
 
         scanf("%i",&opcao);
-        
+
     switch (opcao){
             case 1:
-                printf("Insira o nome do funcinário: ");
-                scanf ("%s", f1.nome);
-                printf("\nInsira o salário do funcinário: ");
-                scanf ("%f",&f1.salario);
+            cadastro(&f1);
                 break;
 
             case 2:
-                printf("\nNome: %s", f1.nome);
-                printf("\nSalario: %f", f1.salario);
+            exiba(f1);
                 break;
             case 3:
                 upvalor(f1.salario, taxa);
@@ -49,19 +54,11 @@ int main(){
                 upreferencia(&f1.salario, taxa);
                 break;
             case 5:
-                opcao = 0;
-                break;
-            case 6:
-                printf("Bem-vindo ao programa\n");
+                printf("\nTchau\n");
                 break;
             default:
-                printf("Valor Invalido\n");  
-                
+                printf("Valor Invalido\n");
                 }
-                    }
+        }while(opcao !=5);
 
             }
-            
-            
-            
-            
