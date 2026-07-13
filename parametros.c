@@ -6,10 +6,10 @@ struct Funcionario{
     float salario;
 };
 struct Funcionario f1;
-int limpadordebuf;
+char limpadordebuf[10];
 void cadastro(char nome[50], float *salario){
     printf("Insira o nome do funcinário: ");
-    limpadordebuf = getchar();//após o digitar 1 e apertar enter, fica um \n no buff, não consegui sem usar este comando
+    fgets(limpadordebuf, 10, stdin);//após o digitar 1 e apertar enter, fica um \n no buff, não consegui sem usar este comando
     fgets(nome, 50, stdin);
     printf("\nInsira o salário do funcinário: ");
     scanf ("%f", &*salario);
