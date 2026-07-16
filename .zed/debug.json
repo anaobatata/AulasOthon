@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Debug C (arquivo atual)",
+    "adapter": "CodeLLDB",
+    "request": "launch",
+    "build": {
+      "command": "gcc",
+      "args": ["-g", "$ZED_FILE", "-o", "$ZED_FILE_DIRNAME/$ZED_FILE_STEM"],
+      "cwd": "$ZED_FILE_DIRNAME"
+    },
+    "program": "$ZED_FILE_DIRNAME/$ZED_FILE_STEM",
+    "cwd": "$ZED_FILE_DIRNAME"
+  },
+  {
+    "label": "Debug C++ (arquivo atual)",
+    "adapter": "CodeLLDB",
+    "request": "launch",
+    "build": {
+      "command": "g++",
+      "args": ["-g", "$ZED_FILE", "-o", "$ZED_FILE_DIRNAME/$ZED_FILE_STEM"],
+      "cwd": "$ZED_FILE_DIRNAME"
+    },
+    "program": "$ZED_FILE_DIRNAME/$ZED_FILE_STEM",
+    "cwd": "$ZED_FILE_DIRNAME"
+  }
+]
